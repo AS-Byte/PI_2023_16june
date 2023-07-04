@@ -1,0 +1,107 @@
+
+<main style="margin-top: 58px;"><div class="col-xl-10 margin-top">
+    
+    
+
+
+
+    <div class="col-xl-10 margin-top">
+        <div class="card shadow">
+               <div class="card-header bg-transparent">
+                      <div class="row align-items-center">
+                        <div class="col">
+                                 <h6 class="text-uppercase text-muted ls-1 mb-1">Update Disponibility</h6>
+                                 
+                           </div>                  
+                      </div>                 
+               </div>
+               
+               
+        <div class="card-body margin-top">
+        <div class="container pt-2">
+    
+        <form #f1="ngForm" >
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><b> Id Disponibility</b></label>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control"#idt="ngModel" name="idDisponibilite" [(ngModel)]="disponible.idDisponibilite" >
+                   </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><b> Date Disponibility</b></label>
+                  <div class="col-sm-8">
+                    <input type="date" class="date-start ml-5 form-control datepicker" name="dateDisponible" #de="ngModel"  [(ngModel)]="disponible.dateDisponible" >
+                  </div>
+                </div>
+              </div>
+              
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 control-label"><b> Heure Debut</b></label>
+            <div class="col-sm-8">
+              <input type="number" class="form-control" name="heureDebut" #de="ngModel"  [(ngModel)]="disponible.heureDebut" >
+            </div>
+          </div>
+        </div>
+        
+        
+
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label class="control-label col-sm-8"><b>Heure Fin</b></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" #ep="ngModel" required name="heureFin" [(ngModel)]="disponible.heureFin" >
+                  </div>
+              
+              </div>
+            </div>
+          
+ 
+      
+     <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label col-sm-2"><b>Id Annonce</b></label>
+              <div class="col-sm-10">
+                <!--<input type="number" class="form-control"name="contrat" #idcontrat="ngModel" [(ngModel)]="tranche.contrat">-->
+                <select class="dropdownlist"  #ct="ngModel" required [(ngModel)]="annonce.idAnnonce" name="annonce">
+
+                <option *ngFor=" let i of annonceslist"  [ngValue]="i"  selected>{{i.idAnnonce}}</option>
+                  
+        
+                </select>
+              </div>
+            </div>
+          </div>     
+              
+        
+            
+          
+          
+
+             <div class="text-center">
+               <!-- <input type="submit" value="update"(click)="update(f1.value)">-->
+            
+            <input class="btn btn-success" type="submit" value="update"(click)="update(f1.value)">
+             </div>
+            <!--<button class="btn btn-primary waves-effect waves-light " id="btn-submit" (click)="ajouter(f1.value)">Ajouter</button>-->
+          </form>
+        
+        </div>
+                </div>
+                </div>
+          
+        
+          <!--<input type="hidden" name="action" id="action" value="event_dialog_add_newpartnerdata" />-->
+    
+    </div>
+    </div>
+    
+    
+    </main>

@@ -1,0 +1,63 @@
+<div class="container-xl px-4 mt-4">
+    <hr class="mt-0 mb-4">
+    <div class="row gx-4">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center"><img style="width: 100%;" [src]="'data:image/jpeg;base64,' + user.image" alt=""
+                        class="img-account-profile rounded-circle mb-2">
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger
+                        than 5 MB</div><input type="file" name="image" (change)="onImageChange($event)" />
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form novalidate="" class="ng-untouched ng-pristine ng-valid">
+                        <div class="mb-3"><label for="inputUsername" class="small mb-1">Username (how your name will
+                                appear to
+                                other users on the site)</label><input id="inputUsername" type="text"
+                                 value="username" class="form-control" name="email" [(ngModel)]="user.email"></div>
+                        <div class="row">
+                            <div class="mb-3 col-md-6"><label for="inputFirstName" class="small mb-1">First
+                                    name</label><input id="inputFirstName" type="text"  name="firstname" [(ngModel)]="user.firstname"
+                                     value="Valerie" class="form-control">
+                            </div>
+                            <div class="mb-3 col-md-6"><label for="inputLastName" class="small mb-1">Last
+                                    name</label><input id="inputLastName" type="text"
+                                    value="Luna" class="form-control"  name="lastname"  [(ngModel)]="user.lastname"></div>
+                        </div>
+                        <div class="row">
+
+                            <div class="mb-3 col-md-6"><label for="inputLocation"
+                                    class="small mb-1">profession</label><input id="inputLocation" type="text"  name="profession"  [(ngModel)]="user.profession"
+                                    placeholder="Enter your profession" value="doctor" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3"><label for="inputEmailAddress" class="small mb-1"> address</label><input
+                                id="inputEmailAddress" name="password2"   type="text" placeholder="Enter your  address" name="address"  [(ngModel)]="user.address"
+                                value="35 rue abu hassan ibn saida" class="form-control"></div>
+                        <div class="row">
+                            <div class="mb-3 col-md-6"><label for="inputPhone" class="small mb-1">Phone
+                                    number</label><input id="inputPhone" type="tel"
+                                    placeholder="Enter your phone number" value="55123567" class="form-control"  name="num"  [(ngModel)]="user.num" >
+                            </div>
+                            <div class="mb-3 col-md-6"><label for="inputBirthday"
+                                    class="small mb-1">Birthday</label><input id="inputBirthday" type="text"
+                                    name="birthday" placeholder="Enter your birthday" value="06/10/1988"   name="birthdate"  [(ngModel)]="user.birthdate"
+                                    class="form-control">
+                            </div>
+
+                              <div *ngIf="errorMessage" class="error-message">
+                                {{ errorMessage }}
+                              </div>
+                        </div><button type="button" class="btn btn-primary" (click)="updateConnectedUser()">Save
+                            changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

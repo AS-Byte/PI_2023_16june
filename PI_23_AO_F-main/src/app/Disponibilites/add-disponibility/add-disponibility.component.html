@@ -1,0 +1,100 @@
+<main style="margin-top: 58px;">
+
+
+    <div class="col-xl-10 margin-top">
+      <div class="card shadow">
+             <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col">
+                               <h6 class="text-uppercase text-muted ls-1 mb-1">Add Disponibility
+                               </h6>
+                               
+                         </div>                  
+                    </div>                 
+             </div>
+              <div class="card-body margin-top">
+                     <!-- Chart -->
+                    <!-- <div class="chart">
+                        <canvas id="chart-orders" class="chart-canvas"></canvas>
+                      </div>-->
+  
+  
+  
+                      <div class="container pt-4">
+                          
+  
+                        <form #f1="ngForm" >                             
+                          
+      
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label class="col-sm-4 control-label"><b> Date Disponible</b></label>
+                            <div class="col-sm-8">
+                              <input type="date" class="date-start ml-5 form-control datepicker" name="dateDisponible" #dd="ngModel" required [(ngModel)]="disponible.dateDisponible" >
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label class="col-sm-4 control-label"><b>Heure Debut</b></label>
+                            <div class="col-sm-8">
+                              <input type="number"  name="heureDebut" class="date-end ml-5 form-control datepicker col-sm-8" #dr="ngModel" required [(ngModel)]="disponible.heureDebut" >
+                            </div>
+                          </div>
+                        </div>
+   
+                                               
+                        
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                              <label class="control-label col-sm-4"><b>Heure Fin</b></label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control"name="heureFin" #m="ngModel" [(ngModel)]="disponible.heureFin">
+                              </div>
+                            </div>
+                            </div>
+
+
+                        
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                  <label class="control-label col-sm-4"><b>Annonce</b></label>
+                                  <div class="col-sm-8">                                   
+
+                                    <select class="dropdownlist"  #ia="ngModel" required [(ngModel)]="disponible.annonce" name="annonce">
+
+                                        <option *ngFor=" let i of annonceslist" [ngValue]="i">{{i.idAnnonce}}</option>
+                                          
+                                
+                                        </select>
+                                  </div>
+                                </div>
+                                </div>                        
+                                                        
+                        
+                                                
+                          <div class="text-center">
+                            <input type="submit" value="save"(click)="ajouterDisponible(f1.value)">
+                             </div>
+
+
+
+
+                            <!--<button class="btn btn-primary waves-effect waves-light " id="btn-submit" (click)="ajouter(f1.value)">Ajouter</button>-->
+                          </form>
+                        
+                        
+                        </div>
+                          </div>
+                         </div>
+                         </div>
+                         </main> 
+                        
+                        
+                          
+                        
+                          <!--<input type="hidden" name="action" id="action" value="event_dialog_add_newpartnerdata" />-->
+  
+  
+  

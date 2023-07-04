@@ -1,0 +1,182 @@
+<main style="margin-top: 58px;"><div class="col-xl-10 margin-top">
+    
+    
+
+
+
+    <div class="col-xl-10 margin-top">
+        <div class="card shadow">
+               <div class="card-header bg-transparent">
+                      <div class="row align-items-center">
+                        <div class="col">
+                                 <h6 class="text-uppercase text-muted ls-1 mb-1">Update Tranche</h6>
+                                 
+                           </div>                  
+                      </div>                 
+               </div>
+               
+               
+        <div class="card-body margin-top">
+        <div class="container pt-2">
+    
+        <form #f1="ngForm" >
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><b> Id Tranche</b></label>
+                  <div class="col-sm-8">
+                    <input type="number" class="date-start ml-5 form-control datepicker"#idt="ngModel" name="idTranche" [(ngModel)]="tranche.idTranche" >
+                   </div>
+                </div>
+            </div>
+              
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 control-label"><b> Date Echeance</b></label>
+            <div class="col-sm-8">
+              <input type="date" class="date-start ml-5 form-control datepicker" name="dateEcheance" #de="ngModel"  [(ngModel)]="tranche.dateEcheance" >
+            </div>
+          </div>
+        </div>
+        
+        
+
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label class="control-label col-sm-8"><b>Etat Payement</b></label>
+              <div class="col-sm-10">
+                <select class="dropdownlist"  #ep="ngModel" required name="etatPayement" [(ngModel)]="tranche.etatPayement" >
+                  <option  selected value="true">Payé</option>
+                  <option value="false">Impayé</option>
+                  </select>       
+              
+              </div>
+            </div>
+          </div>
+
+
+
+
+        
+        
+        
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label col-sm-4"><b>Montant Echéance</b></label>
+              <div class="col-sm-8">
+                <input type="number" class="form-control"name="montantEcheance" #me="ngModel" [(ngModel)]="tranche.montantEcheance">
+              </div>
+            </div>
+    
+    
+    
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label col-sm-8"><b><span>Reference Payement</span></b></label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control"name="referencePayement" #rp="ngModel" [(ngModel)]="tranche.referencePayement">
+                </div>
+              </div>
+    
+              <div class="col-sm-8">
+                <div class="form-group">
+                  <label class="col-sm-8 control-label"><b>Description</b></label>
+                  <div class="col-sm-8">
+                    <!--<input type="text" class="form-control"name="description" #desc="ngModel" [(ngModel)]="tranche.description">-->
+
+
+
+                    <select class="dropdownlist"  name="description" #desc="ngModel" [(ngModel)]="tranche.description">
+                      <option value="Caution">Caution</option>
+                      <option value="Loyer">Loyer</option>
+                    </select>
+                  </div>
+                </div>
+        
+            
+    
+    
+               
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label class="control-label col-sm-8"><b>Banque</b></label>
+                    <div class="col-sm-10">
+                      <select class="dropdownlist"  #bq="ngModel" required [(ngModel)]="tranche.banque" name="banque">
+                        <option value="ATB">ATB</option>
+                        <option value="ATTIJARI">ATTIJARI</option>
+                        <option value="AMENBANK">AMENBANK</option>
+                        <option value="BIAT">BIAT</option>
+                        <option value="ZITOUNA">ZITOUNA</option>        
+                        <option value="BHBANK">BHBANK</option>              
+                        </select>     
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-10"><b>Modalite de Payement</b></label>
+                    <div class="col-sm-10">
+                      <select class="dropdownlist"  #tp="ngModel" required  name="modePayement"[(ngModel)]="tranche.modePayement" >
+                        <option  selected value="CHEQUE">CHEQUE</option>
+                        <option value="VIREMENT">VIREMENT</option>
+                        <option value="COMPTANT">ESPECE</option>
+                        <option value="TRAITE">TRAITE</option>    
+                      </select>
+          
+                      </div>
+                      </div>
+              
+    
+    
+    
+    
+              </div>
+            </div>
+          </div>
+        
+          
+    
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label col-sm-2"><b>Id Contrat</b></label>
+              <div class="col-sm-10">
+
+               <!-- <input type="number" class="form-control"name="contrat" #idcontrat="ngModel" [(ngModel)]="tranche.contrat.idContrat">-->
+               <select class="dropdownlist"  #ct="ngModel" required [(ngModel)]="contract.idContrat" name="contrat">
+
+                <option *ngFor=" let i of contratslist"  [ngValue]="i" selected>{{i.idContrat}}</option>                  
+        
+                </select>
+              </div>
+            </div>
+          </div>    
+              
+        
+            
+          
+          
+
+             <div class="text-center">
+               <!-- <input type="submit" value="update"(click)="update(f1.value)">-->
+            
+            <input class="btn btn-success" type="submit" value="update"(click)="update(f1.value)">
+             </div>
+            <!--<button class="btn btn-primary waves-effect waves-light " id="btn-submit" (click)="ajouter(f1.value)">Ajouter</button>-->
+          </form>
+        
+        </div>
+                </div>
+                </div>
+          
+        
+          <!--<input type="hidden" name="action" id="action" value="event_dialog_add_newpartnerdata" />-->
+    
+    </div>
+    </div>
+    
+    
+    </main>

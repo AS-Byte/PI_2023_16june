@@ -1,0 +1,141 @@
+<main style="margin-top: 58px;">
+    
+    <div class="container pt-4"></div>
+    
+        <table class="table align-items-center table-flush "><!---->
+            <thead class="thead-light">
+              <tr>  
+                <th scope="col">idRDV</th>
+                <th scope="col">dateRDV</th>
+                <th scope="col">dureeRDV</th>
+                <th scope="col">contenuFeedback</th>
+                <th scope="col">noteVisite</th>
+                <th scope="col">typeFeedback</th>
+                <th scope="col">visiteur</th>
+                       
+             </tr>
+            </thead>
+    
+    
+            <tbody>
+                <tr *ngFor=" let i of listRdvs">        
+                    <td >{{i.idRDV}}</td>
+                    <td>{{i.dateRDV}}</td>                
+                    <td>{{i.dureeRDV}}</td>                
+                    <td>{{i.contenuFeedback}}</td>
+                    <td>{{i.noteVisite}}</td>
+                    <td>{{i.typeFeedback}}</td>                
+                    <td>{{i.visiteur.nom}}  {{i.visiteur.prenom}}</td>                
+                    
+    
+                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficherOneRDV(i.idRDV)">
+                      Détail 
+                     </button>               
+                                    
+                    <button type="button" class="btn btn-outline-primary" (click)="updateRDV(i.idRDV)">update</button>   
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="deleteRDV(i.idRDV)">
+                      Delete
+                     </button>          
+                    
+                   <!--<td> <button type="button" class="btn btn-outline-danger" (click)="delete(i.i.idTranche)">Delete</button>-->
+                 
+                 </tr>
+                    </tbody>
+                </table>        
+    
+    <!-- Modal one tranche -->
+    
+    <!-- Button trigger modal -->
+    
+    
+    <!-- Modal Détail-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Détail RDV</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+    
+          <div class="modal-body" >
+    
+    <!-- main content modal -->
+    <table class="table align-items-center table-flush ">
+      <thead class="thead-light">
+        <tr>  
+            <th scope="col">idRDV</th>
+            <th scope="col">dateRDV</th>
+            <th scope="col">dureeRDV</th>
+            <th scope="col">contenuFeedback</th>
+            <th scope="col">noteVisite</th>
+            <th scope="col">typeFeedback</th>
+            <th scope="col">visiteur</th>        
+       </tr>
+      </thead>
+    
+      <tbody>
+        <tr >
+    
+                    <td >{{rdv.idRDV}}</td>
+                    <td>{{rdv.dateRDV}}</td>                
+                    <td>{{rdv.dureeRDV}}</td>                
+                    <td>{{rdv.contenuFeedback}}</td>
+                    <td>{{rdv.noteVisite}}</td>
+                    <td>{{rdv.typeFeedback}}</td>                
+                    <td>{{visiteur.nom}} {{visiteur.prenom}}</td>                
+                    
+    
+          </tr>
+        </tbody>
+    </table>  
+    </div></div>
+    </div></div>
+<!-- End Modal Détail-->
+
+<!--Modal delete-->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog  ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Tranche</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body" >
+  
+  <!-- main content modal -->
+  
+  <h6>Etes vous sûr de supprimer cette tranche?</h6>
+  
+          
+  
+  <!-- fin main content Modal -data-bs-dismiss="modal"-->
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" >Confirm delete</button>
+          <button type="button" class="btn btn-primary"data-bs-dismiss="modal" (click)="annuler()">Annuler delete</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+</main>

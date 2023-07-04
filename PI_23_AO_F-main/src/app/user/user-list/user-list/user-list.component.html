@@ -1,0 +1,70 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner><div class="card">
+
+    <div id="root">
+      <div class="container pt-5">
+        <div class="row align-items-stretch">
+          <div class="c-dashboardInfo col-lg-3 col-md-6">
+            <div class="wrap">
+              <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">User signed<svg
+                  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                  </path>
+                </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{data.user_number}}</span>
+            </div>
+          </div>
+          <div class="c-dashboardInfo col-lg-3 col-md-6">
+            <div class="wrap">
+              <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"> Visitor number<svg
+                  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                  </path>
+                </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{data.token_number}}</span>
+          
+            </div>
+          </div>
+          <div class="c-dashboardInfo col-lg-3 col-md-6">
+            <div class="wrap">
+              <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Actif user<svg
+                  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                  </path>
+                </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{data.user_actif}}</span>
+            </div>
+          </div>
+          <div class="c-dashboardInfo col-lg-3 col-md-6">
+            <div class="wrap">
+              <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Inactif user<svg
+                  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                  </path>
+                </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{{data.user_inactif}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="card">
+ 
+        <ng2-smart-table id="table1" [settings]="settings" [source]="userList" (editConfirm)="updateUser($event)" (deleteConfirm)="onDeleteConfirm($event)" >
+      
+        </ng2-smart-table>
+
+</div>

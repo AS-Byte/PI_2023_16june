@@ -1,0 +1,159 @@
+
+
+
+
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+   
+    <div class="container pt-4"></div>
+
+    <table class="table align-items-center table-flush "><!---->
+        <thead class="thead-light">
+          <tr>  
+            <th scope="col">Id Contrat</th>
+            <th scope="col">Date Debut</th>
+            <th scope="col">Date Fin</th>
+            <!--<th scope="col">Montant Total</th>-->
+            <th scope="col">Type Contrat</th>
+           
+           
+           <!-- <th scope="col">Montant Mensuel</th>
+            <th scope="col">Modalite de Payement</th>
+            <th scope="col">Banque</th>-->
+            <th scope="col">Etat Contrat</th>
+            <th scope="col">Signataire</th>
+           <!-- <th scope="col">Etat d'archive</th>            
+            <th scope="col">Commission</th>-->
+            
+
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let i of list">
+        
+                <td >{{i.idContrat}}</td>
+                <td>{{i.dateDebut}}</td>
+                <td> {{i.dateFin}}</td>
+               <!-- <td>{{i.montant}}</td>-->
+                <td>{{i.typeContrat}}</td>
+                <!--<td>{{i.montantMensuel}}</td>
+                <td>{{i.modalitePayement}}</td>
+                <td>{{i.bank}}</td>  -->              
+                <td>{{i.etatContrat}}</td>
+                <td>{{i.signataire.prenom}} {{i.signataire.nom}}</td>
+              <!--  <td>{{i.archive}}</td>               
+                <td>{{i.commission}}</td>-->
+                
+               
+                     
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficherOneContrat(i.idContrat)">
+                  Détail 
+                 </button>               
+                             
+               <button type="button" class="btn btn-outline-primary" (click)="update(i.idContrat)">update</button>             
+                
+               <button type="button" class="btn btn-outline-danger" (click)="delete(i.idContrat)">Delete</button>
+                               
+                
+                </tr>
+                </tbody>
+            </table>        
+
+
+       <!--fin form update--> 
+
+
+
+
+
+
+<!--modal one contrat-->
+
+<!-- Modal Détail-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Détail Contrat</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" >
+
+<!-- main content modal -->
+<table class="table align-items-center table-flush ">
+  <thead class="thead-light">
+    <tr>  
+      <th scope="col">Id Contrat</th>
+            <th scope="col">Date Debut</th>
+            <th scope="col">Date Fin</th>
+            <th scope="col">Montant Total</th>
+            <th scope="col">Type Contrat</th>
+            <th scope="col">Montant Mensuel</th>
+            <th scope="col">Modalite de Payement</th>
+            <th scope="col">Banque</th>
+            <th scope="col">Etat Contrat</th>
+            <th scope="col">Signataire</th>
+            <th scope="col">Etat d'archive</th>            
+            <th scope="col">Commission</th>         
+   </tr>
+  </thead>
+
+  <tbody>
+    <tr >
+
+      <td >{{contrat.idContrat}}</td>
+      <td>{{contrat.dateDebut}}</td>
+      <td> {{contrat.dateFin}}</td>
+      <td>{{contrat.montant}}</td>
+      <td>{{contrat.typeContrat}}</td>
+      <td>{{contrat.montantMensuel}}</td>
+      <td>{{contrat.modalitePayement}}</td>
+      <td>{{contrat.bank}}</td>                
+      <td>{{contrat.etatContrat}}</td>
+      <td>{{signataire.prenom}} {{signataire.nom}}</td>
+      <td>{{contrat.archive}}</td>               
+      <td>{{contrat.commission}}</td>
+
+      </tr>
+    </tbody>
+</table>  
+
+
+<!-- fin main content Modal -->
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin modal one contrat-->
+
+
+
+            
+   
+
+    
+    
+    
+    <!--contenu-->
+    
+        
+  </main>
+  <!--Main layout-->
+
+
+
+
+<!--content area-->
+
+
+

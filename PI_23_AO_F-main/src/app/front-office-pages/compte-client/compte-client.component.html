@@ -1,0 +1,80 @@
+
+
+
+  <div class="row">
+    <div class="col-sm-4"><img src="./assets/front-office/img/logo.jpg" height="150" class="img-circle"></div>
+    <div class="btn-group btn-group">
+        <button class="btn btn-primary" (click)="myRDV()">Mes RDV</button>
+
+        <button class="btn btn-primary">Mes Contrats</button>
+        
+        <button class="btn btn-primary">Mes Echéances</button>
+      </div>
+  </div>
+
+
+
+
+
+    <main style="margin-top: 58px;">
+    
+        <div class="container pt-4"></div>
+        
+            <table class="table align-items-center table-flush "><!---->
+                <thead class="thead-light">
+                  <tr>  
+                    <th scope="col">idRDV</th>
+                    <th scope="col">dateRDV</th>
+                    <th scope="col">dureeRDV</th>
+                    <th scope="col">contenuFeedback</th>
+                    <th scope="col">noteVisite</th>
+                    <th scope="col">typeFeedback</th>
+                    <th scope="col">visiteur</th>
+                           
+                 </tr>
+                </thead>       
+                    <tbody>
+                    <tr *ngFor=" let i of rdvlist">        
+                        <td >{{i.idRDV}}</td>
+                        <td>{{i.dateRDV}}</td>                
+                        <td>{{i.dureeRDV}}</td>                
+                        <td>{{i.contenuFeedback}}</td>
+                        <td>{{i.noteVisite}}</td>
+                        <td>{{i.typeFeedback}}</td>                
+                        <td>{{i.visiteur.nom}}  {{i.visiteur.prenom}}</td>                
+                        
+        
+                     <!-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficherOneRDV(i.idRDV)">
+                          Détail 
+                         </button>               
+                                        
+                        <button type="button" class="btn btn-outline-primary" (click)="updateRDV(i.idRDV)">update</button>   
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="deleteRDV(i.idRDV)">
+                          Delete
+                         </button>        
+                        
+                       <td> <button type="button" class="btn btn-outline-danger" (click)="delete(i.i.idTranche)">Delete</button>-->
+                     
+                     </tr>
+                        </tbody>
+                    </table>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>

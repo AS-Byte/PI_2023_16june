@@ -1,0 +1,186 @@
+
+
+
+
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+    
+<div class="container pt-4"></div>
+
+    <table class="table align-items-center table-flush "><!---->
+        <thead class="thead-light">
+          <tr>  
+            <th scope="col">Id Tranche</th>
+            <th scope="col">Date Echeance</th>
+            <th scope="col">EtatPayement</th>
+            <th scope="col">Montant Echeance</th>
+            <!--<th scope="col">Reference Payement</th>
+            <th scope="col">Description</th>
+            <th scope="col">Banque</th>
+            <th scope="col">Modalite de Payement</th>-->
+            <th scope="col">Contrat</th>   
+            <th scope="col" colspan="3">Action</th>        
+         </tr>
+        </thead>
+
+
+        <tbody>
+            <tr *ngFor=" let i of listTranches">        
+                <td >{{i.idTranche}}</td>
+                <td>{{i.dateEcheance}}</td>                
+                <td>{{i.etatPayement}}</td>                
+                <td>{{i.montantEcheance}}</td>
+                <!--<td>{{i.referencePayement}}</td>
+                <td>{{i.description}}</td>                
+                <td>{{i.banque}}</td>                
+                <td>{{i.modePayement}}</td>  -->             
+                <td >{{i.contrat.idContrat}}</td>
+
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficherOneTranche(i.idTranche)">
+                  Détail 
+                 </button>            
+               <button type="button" class="btn btn-outline-primary" (click)="update(i.idTranche)">update</button>  
+               <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="deleteTranche(i.idTranche)">
+                  Delete
+                 </button>     
+                
+               <!--<td> <button type="button" class="btn btn-outline-danger" (click)="delete(i.i.idTranche)">Delete</button>-->
+             
+             </tr>
+                </tbody>
+            </table>        
+
+<!-- Modal one tranche -->
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal Détail-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Détail Tranche</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" >
+
+<!-- main content modal -->
+<table class="table align-items-center table-flush ">
+  <thead class="thead-light">
+    <tr>  
+      <th scope="col">Id Tranche</th>
+      <th scope="col">Date Echeance</th>
+      <th scope="col">EtatPayement</th>
+      <th scope="col">Montant Echeance</th>
+      <th scope="col">Reference Payement</th>
+      <th scope="col">Description</th>
+      <th scope="col">Banque</th>
+      <th scope="col">Modalite de Payement</th>
+      <th scope="col">Contrat ID</th>           
+   </tr>
+  </thead>
+
+  <tbody>
+    <tr >
+
+        <td >{{tranche.idTranche}}</td>
+        <td>{{tranche.dateEcheance}}</td>                
+        <td>{{tranche.etatPayement}}</td>                
+        <td>{{tranche.montantEcheance}}</td>
+        <td>{{tranche.referencePayement}}</td>
+        <td>{{tranche.description}}</td>                
+        <td>{{tranche.banque}}</td>                
+        <td>{{tranche.modePayement}}</td>               
+        <td >{{contrat.idContrat}}</td>
+
+      </tr>
+    </tbody>
+</table>  
+
+
+<!-- fin main content Modal -->
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+     <!--fin form update--> 
+
+
+
+
+<!--Modal delete-->
+<!-- Modal Détail-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog  ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Tranche</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" >
+
+<!-- main content modal -->
+
+<h6>Etes vous sûr de supprimer cette tranche?</h6>
+
+        
+
+<!-- fin main content Modal -data-bs-dismiss="modal"-->
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Confirm delete</button>
+        <button type="button" class="btn btn-primary"data-bs-dismiss="modal" >Annuler delete</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--Fin Modal delete-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+   
+    </main>

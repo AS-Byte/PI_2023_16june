@@ -1,0 +1,53 @@
+<main style="margin-top: 58px;">
+   
+    <div class="container pt-4"></div>
+
+    <table class="table align-items-center table-flush "><!---->
+        <thead class="thead-light">
+          <tr>  
+            <th scope="col">Id Contrat</th>
+            <th scope="col">Date Debut</th>
+            <th scope="col">Date Fin</th>
+            <th scope="col">Montant Total</th>
+            <th scope="col">Type Contrat</th>
+            <th scope="col">Montant Mensuel</th>
+            <th scope="col">Modalite de Payement</th>
+            <th scope="col">Banque</th>
+            <th scope="col">Etat Contrat</th>
+            <th scope="col">Signataire</th>
+            <th scope="col">Etat d'archive</th>            
+            <th scope="col">Commission</th>
+            
+
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+        
+              <td >{{contrat?.idContrat}}</td>
+                <td>{{contrat?.dateDebut}}</td>
+                <td> {{contrat?.dateFin}}</td>
+                <td>{{contrat?.montant}}</td>
+                <td>{{contrat?.typeContrat}}</td>
+                <td>{{contrat?.montantMensuel}}</td>
+                <td>{{contrat?.modalitePayement}}</td>
+                <td>{{contrat?.bank}}</td>                
+                <td>{{contrat?.etatContrat}}</td>
+                <td>{{contrat?.signataire.prenom}} {{contrat?.signataire.nom}}</td>
+                <td>{{contrat?.archive}}</td>               
+                <td>{{contrat?.commission}}</td> 
+                
+                
+                </tr>
+                </tbody>
+            </table>
+    
+    
+    
+    
+    <!--contenu-->
+    
+        
+  </main>

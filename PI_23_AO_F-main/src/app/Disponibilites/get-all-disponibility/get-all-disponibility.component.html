@@ -1,0 +1,107 @@
+
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+   
+    <div class="container pt-4"></div>
+
+    <table class="table align-items-center table-flush "><!---->
+        <thead class="thead-light">
+          <tr>  
+            <th scope="col">Id Disponibility</th>
+            <th scope="col">Date Disponibility</th>         
+            <th scope="col">Heure Début</th>
+            <th scope="col">Heure Fin</th>
+            <th scope="col">Annonce Id</th>         
+                               
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let i of list">
+        
+                <td >{{i.idDisponibilite}}</td>
+                <td>{{i.dateDisponible}}</td>
+                <td> {{i.heureDebut}}</td>
+                <td>{{i.heureFin}}</td>
+                <td>{{i.annonce.idAnnonce}}</td>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficherOneDisponibility(i.idDisponibilite)">
+                    Détail Disponibility 
+                   </button>              
+                <button type="button" class="btn btn-outline-primary" (click)="update(i.idDisponibilite)">update</button>               
+                
+                <button type="button" class="btn btn-outline-danger" (click)="delete(i.idDisponibilite)">Delete</button>
+               
+                
+                
+                </tr>
+                </tbody>
+            </table>        
+
+
+       <!--fin form update--> 
+            
+
+       <!-- Modal Détail-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Détail Tranche</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body" >
+  
+  <!-- main content modal -->
+  <table class="table align-items-center table-flush ">
+    <thead class="thead-light">
+      <tr>  
+        <th scope="col">Id Disponibility</th>
+            <th scope="col">Date Disponibility</th>         
+            <th scope="col">Heure Début</th>
+            <th scope="col">Heure Fin</th>
+            <th scope="col">Annonce Id</th>          
+     </tr>
+    </thead>
+  
+    <tbody>
+      <tr >
+  
+        <tr >        
+            <td >{{disponible.idDisponibilite}}</td>
+            <td>{{disponible.dateDisponible}}</td>
+            <td> {{disponible.heureDebut}}</td>
+            <td>{{disponible.heureFin}}</td>
+            <td>{{annonce.idAnnonce}}</td>
+  
+        </tr>
+      </tbody>
+  </table>  
+  
+  
+  <!-- fin main content Modal -->
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+       <!--fin form update--> 
+  
+   
+
+    
+    
+    
+    <!--contenu-->
+    
+        
+  </main>
+  <!--Main layout-->
+
+
